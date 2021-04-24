@@ -1,0 +1,23 @@
+﻿
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+<nav class="zIndex1 navbar navbar-expand navbar-dark bg-dark"  *ngIf="currentUser">
+    <div class="zIndex1 navbar-nav">
+        <a class="nav-item nav-link">Hi {{currentUser.firstName}}!</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+<div class="zIndex1 message">
+    <div></div>
+    <div class="d-flex bg-light">
+        <div class="zIndex1 align-self-center"><button class="btn btn-primary" (click) = "on2DModel()">View 2D Editor</button></div>
+        <div class="zIndex1">
+                <img class="zIndex1 message_image" src="./assets/img/test.jpg">
+        </div>
+        <div class="zIndex1 align-self-center"><button class="btn btn-primary" (click) = "on3DModel()">View 3D Editor</button></div>
+    </div>
+    <div></div>
+</div>
+
+<div class="credit zIndex1"><a routerLink="/credit" class="zIndex1 btn btn-link">Credit</a></div>

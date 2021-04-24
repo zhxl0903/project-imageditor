@@ -1,0 +1,9 @@
+.engine-wrapper {
+    top: 64px;
+    position: absolute;
+}
+
+#renderCanvas {
+    left: 300px;
+    position: absolute;
+}

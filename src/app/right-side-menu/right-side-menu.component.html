@@ -1,0 +1,149 @@
+<mat-sidenav-container class="menu3d sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="'dialog'"
+      [mode]="'side'"
+      [opened]="'true'"
+      position='start'>
+  <mat-tab-group>
+      <mat-tab label="Scene">
+          <div class="menu_component background">
+              Background Color:
+              <input class="color_picker" [cpOutputFormat]="'hex'" [value]="getBackgroundColor()" [colorPicker]="getBackgroundColor()" [cpUseRootViewContainer]="true" [style.background]="getBackgroundColor()" (colorPickerChange)="onBackgroundColorPickerChange($event)"/>
+          </div>
+          <div class="menu_component fog">
+              Fog:
+              <mat-form-field class="fog_options">
+                  <mat-select [value]="getFogOption()" (selectionChange)="onFogSelection($event)">
+                      <mat-option value="option1">None</mat-option>
+                      <mat-option value="option2">Linear</mat-option>
+                      <mat-option value="option3">Exponential</mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <div class="fog_color" [hidden]="engServ.getFog() == null">
+                Fog Color:
+                <input class="color_picker" [cpOutputFormat]="'hex'" [value]="getFogColor()" [colorPicker]="getFogColor()" [cpUseRootViewContainer]="true" [style.background]="getFogColor()" (colorPickerChange)="onFogColorPickerChange($event)"/>
+              </div>
+              <div class="fog_sliders_wrapper" [hidden]="engServ.getFog() == null">
+                <div class="fog_sliders">
+                    <mat-slider
+                    class="fog_density"
+                    thumbLabel
+                    [hidden]="getFogDensityHidden()"
+                    [displayWith]="formatLabel2"
+                    tickInterval="0.01"
+                    (input)="onFogDensitySliderChange($event)"
+                    min="0.00"
+                    max="0.01"
+                    step="0.0001"
+                    value="{{getFogExpDensity()}}"
+                    onkeydown="event.stopPropagation()"
+                    >
+                    </mat-slider>
+                    <mat-slider
+                    class="fog_range"
+                    thumbLabel
+                    [hidden]="getFogRangeHidden()"
+                    [displayWith]="formatLabel"
+                    tickInterval="1000"
+                    (input)="onFogRangeSliderChange($event)"
+                    min="0.00"
+                    max="1000.00"
+                    value="{{getFogRange()}}"
+                    onkeydown="event.stopPropagation()"
+                    >
+                    </mat-slider>
+                </div>
+              </div>
+          </div>
+          <mat-tab-group mat-align-tabs="center">
+              <mat-tab label="Object">
+                <div [hidden]="engServ.getSelected()==null">
+                  <div class="menu_component object_type">{{engServ.getSelected() ? engServ.getSelected().type : ""}}</div>
+                  <form class="object_form">
+                      <div class="menu_component object_name">
+                        <mat-form-field>
+                            <input text matInput placeholder="Object Name:" value="{{getObjectName()}}" (input)="onObjectNameChange($event)" (click)="$event.target.select()" onkeydown="event.stopPropagation()">
+                        </mat-form-field>
+                      </div>
+                      <div class="positions_wrapper">
+                        <div class="object_labels"><p>Position:</p></div>
+                        <mat-form-field class="input_axis" id="position_x">
+                            <input number matInput placeholder="x-axis" value="{{getObjectX()}}" (click)="$event.target.select()" (input)="onObjectXChange($event)" onkeydown="event.stopPropagation()">
+                        </mat-form-field>
+
+                        <mat-form-field class="input_axis" id="position_y">
+                            <input number matInput placeholder="y-axis" value="{{getObjectY()}}" (click)="$event.target.select()" (input)="onObjectYChange($event)" onkeydown="event.stopPropagation()">
+                        </mat-form-field>
+
+                        <mat-form-field class="input_axis" id="position_z">
+                            <input number matInput placeholder="z-axis" value="{{getObjectZ()}}" (click)="$event.target.select()" (input)="onObjectZChange($event)" onkeydown="event.stopPropagation()">
+                        </mat-form-field>
+                      </div>
+                      <div class="rotations_wrapper">
+                        <div class="object_labels"><p>Rotations:</p></div>
+                          <mat-form-field class="input_axis" id="rotation_x">
+                              <input number matInput placeholder="x-axis" value="{{getObjectRotationX()}}" (click)="$event.target.select()" (input)="onObjectRotationXChange($event)" onkeydown="event.stopPropagation()">
+                          </mat-form-field>
+
+                          <mat-form-field class="input_axis" id="rotation_y">
+                              <input number matInput placeholder="y-axis" value="{{getObjectRotationY()}}" (click)="$event.target.select()" (input)="onObjectRotationYChange($event)" onkeydown="event.stopPropagation()">
+                          </mat-form-field>
+
+                          <mat-form-field class="input_axis" id="rotation_z">
+                              <input number matInput placeholder="z-axis" value="{{getObjectRotationZ()}}" (click)="$event.target.select()" (input)="onObjectRotationZChange($event)" onkeydown="event.stopPropagation()">
+                          </mat-form-field>
+                      </div>
+                    <div class="scales_wrapper">
+                        <div class="object_labels"><p>Scale:</p></div>
+                        <mat-form-field class="input_axis" id="scale_x">
+                            <input number matInput placeholder="x-axis" value="{{getObjectScaleX()}}" (click)="$event.target.select()" (input)="onObjectScaleXChange($event)" onkeydown="event.stopPropagation()">
+                        </mat-form-field>
+
+                        <mat-form-field class="input_axis" id="scale_y">
+                            <input number matInput placeholder="y-axis" value="{{getObjectScaleY()}}" (click)="$event.target.select()" (input)="onObjectScaleYChange($event)" onkeydown="event.stopPropagation()">
+                        </mat-form-field>
+
+                        <mat-form-field class="input_axis" id="scale_z">
+                            <input number matInput placeholder="z-axis" value="{{getObjectScaleZ()}}" (click)="$event.target.select()" (input)="onObjectScaleZChange($event)" onkeydown="event.stopPropagation()">
+                        </mat-form-field>
+                    </div>
+                      <div class="menu_component shadow_wrapper">
+                          <section class="shadow_section">
+                            <div class="object_labels"><p>Shadow:</p></div>
+                            <div class="shadow_options">
+                                <mat-checkbox class="shadow_receive" [checked]="getShadowReceive()" (change)="onShadowReceiveChange($event)" [ngModel]="getShadowReceive()" name="receive">Receive</mat-checkbox>
+                                <mat-checkbox class="shadow_cast" [checked]="getShadowCast()" (change)="onShadowCastChange($event)" [ngModel]="getShadowCast()" name="cast">Cast</mat-checkbox>
+                            </div>
+                          </section>
+                      </div>
+                      <div class="menu_component visible"><mat-slide-toggle [checked]="getObjectVisibility()" (change)="onObjectVisibilityChange($event)" id="visible_enable">Visible</mat-slide-toggle></div>
+                      <mat-form-field class="menu_component">
+                          <textarea matInput readonly id="object_user_data" placeholder="User Data" value="{{getUserData()}}" (click)="$event.target.select()" ></textarea>
+                      </mat-form-field>
+                    </form>
+                </div>
+              </mat-tab>
+              <mat-tab label="Geometry">
+                <div [hidden]="engServ.getSelected()==null">
+                  {{this.engServ.getSelected() ? (!this.engServ.isLight(this.engServ.getSelected()) ? this.engServ.getSelected().geometry.type : "") : ""}}
+                </div>
+              </mat-tab>
+              <mat-tab label="Material">
+                <div [hidden]="getMaterialHidden()">
+                  <div class="menu_component">
+                    Object Color:
+                    <input class="color_picker" [cpOutputFormat]="'hex'" [value]="getObjectColor()" [colorPicker]="getObjectColor()" [cpUseRootViewContainer]="true" [style.background]="getObjectColor()" (colorPickerChange)="onObjectColorChange($event)"/>
+                  </div>
+                  <div class="menu_component">
+                    Emissive Color:
+                    <input class="color_picker" [cpOutputFormat]="'hex'"  [value]="getObjectEmissiveColor()" [colorPicker]="getObjectEmissiveColor()" [cpUseRootViewContainer]="true" [style.background]="getObjectEmissiveColor()" (colorPickerChange)="onObjectEmissiveColorChange($event)"/>
+                  </div>
+                </div>
+              </mat-tab>
+          </mat-tab-group>
+      </mat-tab>
+        <mat-tab label="Project">Project</mat-tab>
+        <mat-tab label="Settings">Settings</mat-tab>
+      </mat-tab-group>
+  </mat-sidenav>
+</mat-sidenav-container>

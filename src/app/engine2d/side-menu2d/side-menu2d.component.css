@@ -1,0 +1,255 @@
+.mat-tab-icon {
+  width:50px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:50%;
+}
+
+.mat-tab-label {
+  padding: 0 !important;
+  min-width: 25px !important;
+}
+
+.mat-tab-labels {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+}
+
+.mat-tab-body, .mat-tab-body-content {
+  display:flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100%;
+  padding: 5px 5px 5px 0px;
+}
+
+.mat-tab-header {
+  width: 50px;
+}
+
+/* all icon images are downloaded from Angular Materials Design
+https://material.io/tools/icons/?style=baseline */
+
+.user_tab {
+  background-image: url('../../../assets/img/round-account_box-24px.svg');
+}
+
+.image_tab {
+  background-image: url('../../../assets/img/round-photo-24px.svg');
+}
+
+.crop_tab {
+  background-image: url('../../../assets/img/round-crop-24px.svg');
+}
+
+.filter_tab {
+  background-image: url('../../../assets/img/round-tune-24px.svg');
+}
+
+.text_tab {
+  background-image: url('../../../assets/img/round-title-24px.svg');
+}
+
+.shape_tab, .add_image, .add_text {
+  background-image: url('../../../assets/img/round-add-24px.svg');
+}
+
+.color_tab {
+  background-image: url('../../../assets/img/round-palette-24px.svg');
+}
+
+.export_image {
+  background-image: url('../../../assets/img/round-vertical_align_bottom-24px.svg');
+}
+
+.rotate_left{
+  background-image: url('../../../assets/img/round-rotate_left-24px.svg');
+}
+
+.rotate_right{
+  background-image: url('../../../assets/img/round-rotate_right-24px.svg');
+}
+
+.reset_image, .delete_text {
+  background-image: url('../../../assets/img/round-clear-24px.svg');
+}
+
+.flip_horizontal{
+  background-image: url('../../../assets/img/round-360-horizontal-24px.svg');
+}
+
+.flip_vertical{
+  background-image: url('../../../assets/img/round-360-vertical-24px.svg');
+}
+
+.bold_text{
+  background-image: url('../../../assets/img/2D-text/round-format_bold-24px.svg');
+}
+
+.italic_text{
+  background-image: url('../../../assets/img/2D-text/round-format_italic-24px.svg');
+}
+
+.underline_text{
+  background-image: url('../../../assets/img/2D-text/round-format_underlined-24px.svg');
+}
+
+/* below shapes icons are from https://www.flaticon.com/packs/shapes-6 created by Pixel perfect */
+/* <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>
+from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a>
+is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */
+.line_shape {
+  background-image: url('../../../assets/img/2D-shape/line.svg');
+}
+
+.curved_line_shape{
+  background-image: url('../../../assets/img/2D-shape/curved-line.svg');
+}
+
+
+.circle_shape{
+  background-image: url('../../../assets/img/2D-shape/circle.svg');
+}
+
+.rectangle_shape{
+  background-image: url('../../../assets/img/2D-shape/rectangle.svg');
+}
+
+.square_shape{
+  background-image: url('../../../assets/img/2D-shape/square.svg');
+}
+
+.triangle_shape{
+  background-image: url('../../../assets/img/2D-shape/triangle.svg');
+}
+
+.pentagon_shape{
+  background-image: url('../../../assets/img/2D-shape/pentagon.svg');
+}
+
+.star_shape{
+  background-image: url('../../../assets/img/2D-shape/star.svg');
+}
+
+.heart_shape{
+  background-image: url('../../../assets/img/2D-shape/heart.svg');
+}
+
+.menu_options .mat-raised-button{
+  margin-bottom: 10px;
+}
+
+
+.mat-tab-group {
+  display:flex !important;
+  flex-direction: row !important;
+  min-height: 100% !important;
+}
+
+.sidenav-container {
+  height: 100%;
+  width: 0px;
+}
+
+.sidenav {
+  margin-top: 0px;
+  width: 300px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  /* z-index: 1; */
+}
+
+.mat-ink-bar {
+  display: none;
+}
+
+.menu_header {
+  text-align: center;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-divider {
+  width: 80%;
+}
+
+.image_buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.filter_wrapper p {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+
+.filter_sliders {
+  margin-left: 5px;
+  width: 230px;
+}
+
+.menu_component {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.menu_options input, .menu_options .mat-form-field-infix{
+  width: 90px;
+}
+
+.menu_reset {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.divider.reset {
+  margin-top: 100px;
+}
+
+.color_text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+
+.mat-tab-label-container {
+  background-color: #cfd8dc;
+}
+
+.mat-tab-body-wrapper {
+  background-color: #f5f5f5;
+}

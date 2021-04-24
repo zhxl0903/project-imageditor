@@ -1,0 +1,107 @@
+.menu3d .mat-tab-label {
+  min-width: 25px !important;
+}
+
+.menu3d .mat-tab-labels {
+  justify-content: space-between !important;
+}
+
+.menu3d .sidenav-container {
+  height: 100%;
+  width: 0px;
+}
+
+.menu3d .sidenav {
+  margin-top: 64px;
+  width: 300px;
+}
+
+.menu3d .sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.menu3d .mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.menu3d .color_picker {
+  width: 80px;
+  height: 25px;
+  z-index: 1 !important;
+}
+
+.menu3d .menu_component.background, .menu3d .object_type {
+  margin-top: 10px;
+}
+
+.menu3d .object_type {
+  margin-bottom: 5px;
+}
+
+.menu3d .menu_component {
+  margin-left: 10px;
+}
+
+.menu3d .fog_options {
+  width: 110px !important;
+}
+
+.menu3d .object_list_options {
+  width: 110px !important;
+}
+
+.menu3d .Shadow_options {
+  width: 70px;
+}
+
+.menu3d .mat-slider {
+  width: 100px;
+}
+
+.menu3d .fog_color{
+  margin-bottom: 15px !important;
+}
+
+.menu3d .fog_sliders_labels, .menu3d .fog_sliders{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu3d .positions_wrapper, .menu3d .rotations_wrapper, .menu3d .scales_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 0px;
+}
+
+.menu3d .object_labels {
+  align-self: flex-end;
+}
+
+.menu3d .scale_slide {
+  align-self: center;
+}
+
+.menu3d .object_name input {
+  padding: 0px;
+}
+
+.menu3d .mat-form-field.input_axis {
+  width: 50px;
+}
+
+.menu3d .visible {
+  margin-bottom: 10px;
+}
+
+.menu3d .shadow_section {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu3d .mat-checkbox{
+  margin-left: 20px;
+}
+

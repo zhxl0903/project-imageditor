@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div>
+        <button mat-button [matMenuTriggerFor]="signOutMenu">Menu</button>
+        <mat-menu #signOutMenu="matMenu">
+            <button mat-menu-item (click)="onSignOut()">SignOut</button>
+            <button mat-menu-item (click)="onGoBack()">Back</button>
+          </mat-menu>
+    </div>
+    <div>
+      <button mat-button [matMenuTriggerFor]="addMenu">Add</button>
+      <mat-menu #addMenu="matMenu">
+        <button mat-menu-item (click)="onAddImage()">Image</button>
+        <button mat-menu-item (click)="onAddText()">Text</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="onAddPlane()">Plane</button>
+        <button mat-menu-item (click)="onAddBox()">Box</button>
+        <button mat-menu-item (click)="onAddCircle()">Circle</button>
+        <button mat-menu-item (click)="onAddCylinder()">Cylinder</button>
+        <button mat-menu-item (click)="onAddSphere()">Sphere</button>
+        <button mat-menu-item (click)="onAddIsosahedron()">Icosahedron</button>
+        <button mat-menu-item (click)="onAddTorous()">Torous</button>
+        <button mat-menu-item (click)="onAddTorousKnot()">TorousKnot</button>
+        <button mat-menu-item (click)="onAddTube()">Tube</button>
+        <button mat-menu-item (click)="onAddLathe()">Lathe</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="onAddPointLight()">PointLight</button>
+        <button mat-menu-item (click)="onAddDirectionalLight()">DirectionalLight</button>
+        <button mat-menu-item (click)="onAddSpotLight()">SpotLight</button>
+        <button mat-menu-item (click)="onAddHemisphereLight()">HemisphereLight</button>
+        <button mat-menu-item (click)="onAddAmbientLight()">AmbientLight</button>
+      </mat-menu>
+    </div>
+
+    <div>
+      <button mat-button [matMenuTriggerFor]="fileMenu">File</button>
+      <mat-menu #fileMenu="matMenu">
+        <button mat-menu-item (click)="onNew()">New</button>
+        <button mat-menu-item (click)="onImport()">Import</button>
+        <button mat-menu-item (click)="onExport()">Export</button>
+        <button mat-menu-item (click)="onScreenshot()">Save Screenshot</button>
+      </mat-menu>
+    </div>
+
+    <div>
+      <button mat-button [matMenuTriggerFor]="editMenu">Edit</button>
+      <mat-menu #editMenu="matMenu">
+        <button mat-menu-item (click)="onUndo()">Undo</button>
+        <button mat-menu-item (click)="onRedo()">Redo</button>
+        <button mat-menu-item (click)="onClearHistory()">Clear History</button>
+      </mat-menu>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>

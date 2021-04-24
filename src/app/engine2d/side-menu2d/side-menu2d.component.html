@@ -1,0 +1,245 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="'dialog'"
+      [mode]="'side'"
+      [opened]="'true'"
+      position="start">
+
+    <!-- <mat-tab-group mat-align-tabs="center" vertical> -->
+    <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <div class="mat-tab-icon user_tab"></div>
+            </ng-template>
+            <div><p class="menu_header">User Action</p></div>
+            <div class="divider"><mat-divider></mat-divider></div>
+            <div class="image_buttons menu_options">
+                <button mat-raised-button (click)="onGoBack()">
+                    Go Back
+                </button>
+    
+                <button mat-raised-button (click)="onSignOut()">
+                    Log Out
+                </button>
+            </div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="mat-tab-icon image_tab"></div>
+          </ng-template>
+          <div><p class="menu_header">Image File</p></div>
+          <div class="divider"><mat-divider></mat-divider></div>
+          <div class="image_buttons menu_options">
+              <button mat-raised-button (click)="onImageFileAdd($event)">
+                <mat-icon aria-label="add_image" class="add_image"></mat-icon>
+                Add
+              </button>
+
+              <button mat-raised-button (click)="onImageExport($event)">
+                  <mat-icon aria-label="add_image" class="export_image"></mat-icon>
+                  Export
+              </button>
+          </div>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label><div class="mat-tab-icon crop_tab"></div></ng-template>
+              <div class="menu_component">
+                  <p class="menu_header">Rotate</p>
+                  <div class="divider"><mat-divider></mat-divider></div>
+                  <div class="menu_options">
+                    <button mat-raised-button (click)="onRotate($event, true)">
+                        <mat-icon aria-label="rotate_image" class="rotate_left"></mat-icon>
+                        Left
+                    </button>
+                    <button mat-raised-button (click)="onRotate($event, false)">
+                        <mat-icon aria-label="rotate_image" class="rotate_right"></mat-icon>
+                        Right
+                    </button>
+                  </div>
+              </div>
+
+              <div class="menu_component">
+                  <p class="menu_header">Flip</p>
+                  <div class="divider"><mat-divider></mat-divider></div>
+                  <div class="menu_options flip_options">
+                    <button mat-raised-button (click)="onObjectFlip($event, true)">
+                        <mat-icon aria-label="flip_image" class="flip_horizontal"></mat-icon>
+                        Horizontal
+                    </button>
+                    <button mat-raised-button (click)="onObjectFlip($event, false)">
+                        <mat-icon aria-label="flip_image" class="flip_vertical"></mat-icon>
+                        Vertical
+                    </button>
+                  </div>
+              </div>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label><div class="mat-tab-icon filter_tab"></div></ng-template>
+            <div class="menu_component">
+                <p class="menu_header">Filter</p>
+                <div class="divider"><mat-divider></mat-divider></div>
+                  <div class="menu_options">
+                      <button mat-raised-button (click)="onBlurFilterApply($event)">
+                          Blur
+                      </button>
+                      <button mat-raised-button (click)="onSepiaFilterApply($event)">
+                          Sepia
+                      </button>
+                  </div>
+
+                  <div class="menu_options">
+                      <button mat-raised-button (click)="onGrayScaleFilterApply($event)">
+                          Grayscale
+                      </button>
+                      <button mat-raised-button (click)="onHueRotateFilterApply($event)">
+                          HueRotate
+                      </button>
+                  </div>
+
+                  <div class="menu_options">
+                      <button mat-raised-button (click)="onInvertFilterApply($event)">
+                          Invert
+                      </button>
+                      <button mat-raised-button (click)="onShadowFilterApply($event)">
+                          Shadow
+                      </button>
+                  </div>
+
+                  <div class="menu_options">
+                      <button mat-raised-button (click)="onSaturateFilterApply($event)">
+                          Saturate
+                      </button>
+
+                      <button mat-raised-button (click)="onNoFilterApply($event)">
+                            Default
+                      </button>
+                  </div>
+            </div>
+
+            <div class="menu_component">
+                <p class="menu_header">IBM Watson</p> 
+                <p class="menu_header">Neural Style Transfer</p>
+                <div class="divider"><mat-divider></mat-divider></div>
+                <div class="menu_options">
+                    <button mat-raised-button (click)="onSaturateFilterApply($event)">
+                        Mosaic
+                    </button>
+
+                    <button mat-raised-button (click)="onNoFilterApply($event)">
+                        Candy
+                    </button>
+                </div>
+
+                <div class="menu_options">
+                    <button mat-raised-button (click)="onSaturateFilterApply($event)">
+                        Udnie
+                    </button>
+
+                    <button mat-raised-button (click)="onNoFilterApply($event)">
+                        Rain Princess
+                    </button>
+                </div>
+
+                <p class="menu_header">Image Super Resolution</p>
+                <div class="divider"><mat-divider></mat-divider></div>
+                <div class="menu_options">
+                    <button mat-raised-button (click)="onSaturateFilterApply($event)">
+                        4x SR
+                    </button>
+                </div>
+            </div>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label><div class="mat-tab-icon text_tab"></div></ng-template>
+            <div class="menu_component">
+                <p class="menu_header">Text</p>
+                <div class="divider"><mat-divider></mat-divider></div>
+                <div class="menu_options">
+                  <button mat-raised-button (click)="onAddText($event)">
+                      <mat-icon aria-label="add_text" class="add_text"></mat-icon>
+                      TextBox
+                  </button>
+                  <button mat-raised-button (click)="onDeleteText($event)">
+                      <mat-icon aria-label="delete_text" class="delete_text"></mat-icon>
+                      TextBox
+                  </button>
+
+                  <button mat-raised-button (click)="onToogleBoldText($event)">
+                      <mat-icon aria-label="bold_text" class="bold_text"></mat-icon>
+                  </button>
+                  <button mat-raised-button (click)="onToogleItalics($event)">
+                      <mat-icon aria-label="italic_text" class="italic_text"></mat-icon>
+                  </button>
+                  <button mat-raised-button (click)="onToogleUnderline($event)">
+                      <mat-icon aria-label="underline_text" class="underline_text"></mat-icon>
+                  </button>
+                </div>
+            </div>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label><div class="mat-tab-icon shape_tab"></div></ng-template>
+            <div class="menu_component">
+                <p class="menu_header">Shape</p>
+                <div class="divider"><mat-divider></mat-divider></div>
+
+                <div class="menu_options">
+                    <button mat-raised-button (click)="onLineInsert($event)">
+                        <mat-icon aria-label="line_shape" class="line_shape"></mat-icon>
+                    </button>
+
+                    <button mat-raised-button (click)="onCurveInsert($event)">
+                        <mat-icon aria-label="curved_line_shape" class="curved_line_shape"></mat-icon>
+                    </button>
+
+                    <button mat-raised-button (click)="onCircleInsert($event)">
+                        <mat-icon aria-label="circle_shape" class="circle_shape"></mat-icon>
+                    </button>
+
+                    <button mat-raised-button (click)="onRecInsert($event)">
+                        <mat-icon aria-label="rectangle_shape" class="rectangle_shape"></mat-icon>
+                    </button>
+
+                    <button mat-raised-button (click)="onSquareInsert($event)">
+                        <mat-icon aria-label="square_shape" class="square_shape"></mat-icon>
+                    </button>
+
+                    <button mat-raised-button (click)="onHeartInsert($event)">
+                        <mat-icon aria-label="heart_shape" class="heart_shape"></mat-icon>
+                    </button>
+
+                    <button mat-raised-button (click)="onTriangleInsert($event)">
+                        <mat-icon aria-label="triangle_shape" class="triangle_shape"></mat-icon>
+                    </button>
+
+                    <button mat-raised-button (click)="onPentagonInsert($event)">
+                            <mat-icon aria-label="pentagon_shape" class="pentagon_shape"></mat-icon>
+                    </button>
+
+                    <button mat-raised-button (click)="onStarInsert($event)">
+                        <mat-icon aria-label="star_shape" class="star_shape"></mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label><div class="mat-tab-icon color_tab"></div></ng-template>
+            <div class="menu_component">
+                <p class="menu_header">Color</p>
+                <div class="divider"><mat-divider></mat-divider></div>
+                <div class="menu_options">
+                    <p class="color_text">Pick a color:</p>
+                    <input class="color_picker" [cpOutputFormat]="'hex'"
+                    [value]="color" [colorPicker]="color"
+                    [cpUseRootViewContainer]="true" [style.background]="color"
+                    (colorPickerChange)="onSelectedColorChange($event)"/>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav>
+</mat-sidenav-container>

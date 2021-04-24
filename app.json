@@ -1,0 +1,22 @@
+{
+  "name": "Project Image Editor",
+  "description": "CSCC09 Final Project",
+  "keywords": [
+    "MEAN",
+    "Angular",
+    "Node",
+    "MongoDB",
+    "mLab"
+  ],
+  "repository": "https://github.com/UTSCC09/project-image-editor",
+  "success_url": "/",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    "mongolab"
+  ]
+}
